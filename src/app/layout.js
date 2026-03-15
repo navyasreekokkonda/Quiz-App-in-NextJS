@@ -1,10 +1,9 @@
+// src/app/layout.js
 import localFont from "next/font/local";
 import "./globals.css";
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { PointsProvider } from "@/context/PointsContext";
-
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -18,20 +17,17 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Quiz App",
-  description: "Quiz App For Students",
+  title: "My First Contribution!",
+  description: "MY CONTRIBUTION",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <PointsProvider>
           <Header />
           <main className="min-h-screen">{children}</main>
-          <SpeedInsights />
           <Footer />
         </PointsProvider>
       </body>
